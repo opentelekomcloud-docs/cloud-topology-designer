@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'ctd-umn.tex',
-     u'Cloud Topology Designer - User Guide',
+    u'Cloud Topology Designer - User Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 
@@ -124,6 +124,11 @@ latex_elements = {
   'papersize': 'a4paper',
   'pointsize': '12pt',
   'figure_align': 'H',
-  'preamble': r'\newcommand{\githash}{' + current_commit_hash + '}',
+  'preamble': rf'''
+        \newcommand{{\githash}}{{{current_commit_hash}}}
+        \newcommand{{\gitcommittime}}{{{current_commit_time}}}
+        \newcommand{{\doctitle}}{{{otcdocs_doc_title}}}
+        \newcommand{{\servicetitle}}{{{otcdocs_service_title}}}
+  ''',
   'sphinxsetup': 'hmargin={15mm,15mm}, vmargin={20mm,30mm}, marginpar=10mm'
 }
